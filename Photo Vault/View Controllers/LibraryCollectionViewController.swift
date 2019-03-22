@@ -8,13 +8,12 @@
 
 import UIKit
 import AVFoundation
-import Player
 
 class LibraryCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   var collectionView : UICollectionView!
+  var mediaPlayerViewController: MediaPlayerViewController!
   var fileNames : [String] = []
-  var player: Player!
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -26,18 +25,6 @@ class LibraryCollectionViewController: UIViewController, UICollectionViewDelegat
       collectionView.backgroundColor = UIColor.black
       self.view.addSubview(collectionView)
       
-      self.player = Player()
-      self.player.playerDelegate = self as? PlayerDelegate
-      self.player.playbackDelegate = self as? PlayerPlaybackDelegate
-      self.player.view.frame = self.view.bounds
-      
-      self.addChild(self.player)
-      self.view.addSubview(self.player.view)
-      self.player.didMove(toParent: self)
-      
-      let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
-      tapGestureRecognizer.numberOfTapsRequired = 1
-      self.player.view.addGestureRecognizer(tapGestureRecognizer)
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,12 +69,12 @@ class LibraryCollectionViewController: UIViewController, UICollectionViewDelegat
   }
   
   func showVideo(with pathURL: URL) {
-    print(pathURL)
-    self.player.url = pathURL
-    self.player.playerLayer()?.isHidden = false
-    self.tabBarController?.tabBar.isHidden = true
-    self.player.playFromBeginning()
-
+    mediaPlayerViewController = MediaPlayerViewController()
+    mediaPlayerViewController.mediaPath = pathURL
+    
+    present(mediaPlayerViewController, animated: true, completion: nil)
+    
+    
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -132,51 +119,4 @@ class LibraryCollectionViewController: UIViewController, UICollectionViewDelegat
         return nil
     }
   }
-}
-
-// MARK: - UIGestureRecognizer
-extension LibraryCollectionViewController {
-  
-  @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
-    switch (self.player.playbackState.rawValue) {
-    case PlaybackState.stopped.rawValue:
-      self.player.playFromBeginning()
-      break
-    case PlaybackState.paused.rawValue:
-      self.player.playFromCurrentTime()
-      break
-    case PlaybackState.playing.rawValue:
-      self.player.pause()
-      break
-    case PlaybackState.failed.rawValue:
-      self.player.pause()
-      break
-    default:
-      self.player.pause()
-      break
-    }
-  }
-  
-}
-
-// MARK: - PlayerDelegate
-
-extension LibraryCollectionViewController: PlayerPlaybackDelegate {
-  
-  func playerCurrentTimeDidChange(_ player: Player) {
-  }
-  
-  func playerPlaybackWillStartFromBeginning(_ player: Player) {
-  }
-  
-  func playerPlaybackDidEnd(_ player: Player) {
-    player.stop()
-    self.player.playerLayer()?.isHidden = true
-    self.tabBarController?.tabBar.isHidden = false
-
-  }
-  
-  func playerPlaybackWillLoop(_ player: Player) {
-  }
-  
 }

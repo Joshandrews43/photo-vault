@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC2B8A6759483840CF0D1F6F /* Pods_Photo_Vault.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFD1D4AA99901C571B0432C /* Pods_Photo_Vault.framework */; };
+		DF163B47224435270034CCD3 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF163B46224435270034CCD3 /* MediaPlayerViewController.swift */; };
 		DF7D40322206DFC3001D5BE8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D40312206DFC3001D5BE8 /* Theme.swift */; };
 		DF7D40362207C78C001D5BE8 /* VaultTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D40352207C78C001D5BE8 /* VaultTabViewController.swift */; };
 		DF7D40382207CA2B001D5BE8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D40372207CA2B001D5BE8 /* CameraViewController.swift */; };
@@ -23,6 +24,7 @@
 		2DFD1D4AA99901C571B0432C /* Pods_Photo_Vault.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Vault.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8986131FDE93873F7A4D1210 /* Pods-Photo Vault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Vault.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Vault/Pods-Photo Vault.release.xcconfig"; sourceTree = "<group>"; };
 		D6C812B2B8535F0702F22F24 /* Pods-Photo Vault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Vault.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Vault/Pods-Photo Vault.debug.xcconfig"; sourceTree = "<group>"; };
+		DF163B46224435270034CCD3 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		DF7D40312206DFC3001D5BE8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DF7D40352207C78C001D5BE8 /* VaultTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultTabViewController.swift; sourceTree = "<group>"; };
 		DF7D40372207CA2B001D5BE8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DFCDA2922206DA0B00295C99 /* LockViewController.swift */,
 				DF7D40352207C78C001D5BE8 /* VaultTabViewController.swift */,
 				DF7D40372207CA2B001D5BE8 /* CameraViewController.swift */,
+				DF163B46224435270034CCD3 /* MediaPlayerViewController.swift */,
 				DF7D40392207CA39001D5BE8 /* LibraryCollectionViewController.swift */,
 			);
 			path = "View Controllers";
@@ -206,7 +209,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Photo Vault/Pods-Photo Vault-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Photo Vault/Pods-Photo Vault-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
@@ -221,7 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo Vault/Pods-Photo Vault-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Photo Vault/Pods-Photo Vault-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -237,6 +240,7 @@
 				DFCDA2932206DA0B00295C99 /* LockViewController.swift in Sources */,
 				DFCDA2912206DA0B00295C99 /* AppDelegate.swift in Sources */,
 				DF7D403A2207CA39001D5BE8 /* LibraryCollectionViewController.swift in Sources */,
+				DF163B47224435270034CCD3 /* MediaPlayerViewController.swift in Sources */,
 				DF7D40362207C78C001D5BE8 /* VaultTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
