@@ -1,26 +1,20 @@
 PODS:
-  - MagicalRecord (2.3.2):
-    - MagicalRecord/Core (= 2.3.2)
-  - MagicalRecord/Core (2.3.2)
   - Player (0.12.1)
   - SwiftyCam (3.0.0)
 
 DEPENDENCIES:
-  - MagicalRecord
   - Player
   - SwiftyCam
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - MagicalRecord
     - Player
     - SwiftyCam
 
 SPEC CHECKSUMS:
-  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   SwiftyCam: 67338308e3a5a3545c2aeee17e2c964eba4cf49f
 
-PODFILE CHECKSUM: 924687b51c1c0c64f3fa7da7eba5c6349092b51f
+PODFILE CHECKSUM: d79b618c1ac0185a314e718b785151de1c7a24e2
 
 COCOAPODS: 1.6.1

@@ -7,7 +7,6 @@ target 'Photo Vault' do
 
   # Pods for Photo Vault
   pod 'SwiftyCam'
-  pod 'MagicalRecord'
   pod 'Player'
 
 
